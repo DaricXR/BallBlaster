@@ -139,7 +139,7 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/BallBlaster.loader.js";
         const config = {
-            dataUrl: buildUrl + "/2db8368a6839afcfc273c44fecfb4c44.data.unityweb",
+            dataUrl: buildUrl + "/3564741707b5134b5ede80bc0e4a1cfe.data.unityweb",
             frameworkUrl: buildUrl + "/24378d3a03a1d02989753fa27c1e33d6.js.unityweb",
             codeUrl: buildUrl + "/e203ffa31dc8daf73941700b1c981172.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
@@ -171,7 +171,7 @@
         //script.onload = () => { CreateUnityLoader();   };
         document.body.appendChild(script);
 
-        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
+        ZAPPAR_PERMISSIONS_IMPLEMENTATION
 
         function WaitForZCVLoad() {
             if (zappar.loaded()) {
