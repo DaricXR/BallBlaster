@@ -139,7 +139,7 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/BallBlaster.loader.js";
         const config = {
-            dataUrl: buildUrl + "/66efc34a3a0cf480e90d01896434449b.data.unityweb",
+            dataUrl: buildUrl + "/5f17047c400a92d386818e1627968063.data.unityweb",
             frameworkUrl: buildUrl + "/e39e65dd7c43046ec76f736e865b9ca3.js.unityweb",
             codeUrl: buildUrl + "/d8a511117bbbc08d2d24caf78a5e7a59.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
@@ -147,6 +147,19 @@
             productName: "Tracking",
             productVersion: "0.1",
         //Useful when used along with Filename as Hashes option
+            cacheControl: function (url) {
+            // typically includes: .data, .bundle, .zpt
+            if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
+             return "immutable";
+}
+   
+            if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
+                return "immutable";
+            }   
+            // Disable explicit caching for all other files.
+            // Note: the default browser cache may cache them anyway.
+            return "no-store";
+            },
         };
 
         const container = document.querySelector("#unity-container");
