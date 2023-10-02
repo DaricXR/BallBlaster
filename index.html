@@ -139,9 +139,9 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/BallBlaster.loader.js";
         const config = {
-            dataUrl: buildUrl + "/da96aeb3e3df817bc1ebd0349dfeed4d.data.unityweb",
-            frameworkUrl: buildUrl + "/20b11493bd534cb234c633f3fe5cb709.js.unityweb",
-            codeUrl: buildUrl + "/4bfd1bee6485c8d8467b0f55b4c15f35.wasm.unityweb",
+            dataUrl: buildUrl + "/846957e8d0a705ceb942e4be368aef21.data.unityweb",
+            frameworkUrl: buildUrl + "/24378d3a03a1d02989753fa27c1e33d6.js.unityweb",
+            codeUrl: buildUrl + "/e203ffa31dc8daf73941700b1c981172.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "FaceTrack",
             productName: "Tracking",
@@ -171,7 +171,7 @@
         //script.onload = () => { CreateUnityLoader();   };
         document.body.appendChild(script);
 
-        ZAPPAR_PERMISSIONS_IMPLEMENTATION
+        window.zappar.permission_request_ui_promise().then(WaitForZCVLoad);
 
         function WaitForZCVLoad() {
             if (zappar.loaded()) {
