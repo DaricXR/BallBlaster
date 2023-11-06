@@ -1976,13 +1976,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  3908700: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 3908755: function($0) {performance.now = function() { return $0; };},  
- 3908803: function($0) {performance.now = function() { return $0; };},  
- 3908851: function() {performance.now = Module['emscripten_get_now_backup'];},  
- 3908906: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 3908967: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 3909031: function() {return Module.webglContextAttributes.powerPreference;}
+  3908556: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 3908611: function($0) {performance.now = function() { return $0; };},  
+ 3908659: function($0) {performance.now = function() { return $0; };},  
+ 3908707: function() {performance.now = Module['emscripten_get_now_backup'];},  
+ 3908762: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 3908823: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 3908887: function() {return Module.webglContextAttributes.powerPreference;}
 };
 
 
@@ -4710,15 +4710,6 @@ var ASM_CONSTS = {
   
           requestOptions.timeout = timeout;
   	}
-
-  function _LaunchURLWebGL_launchURL(url, windowName, windowFeatures) {
-  		url            = UTF8ToString(url);
-  		windowName     = UTF8ToString(windowName);
-  		windowFeatures = UTF8ToString(windowFeatures);
-  		document.documentElement.addEventListener('pointerup', function () {
-  			window.open(url, windowName, windowFeatures);
-  		}, { once: true });
-      }
 
   function _OpenNewTab(url)
     {
@@ -15936,7 +15927,6 @@ var asmLibraryArg = {
   "JS_WebRequest_SetRedirectLimit": _JS_WebRequest_SetRedirectLimit,
   "JS_WebRequest_SetRequestHeader": _JS_WebRequest_SetRequestHeader,
   "JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
-  "LaunchURLWebGL_launchURL": _LaunchURLWebGL_launchURL,
   "OpenNewTab": _OpenNewTab,
   "__assert_fail": ___assert_fail,
   "__cxa_allocate_exception": ___cxa_allocate_exception,
