@@ -1976,13 +1976,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  3908508: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 3908563: function($0) {performance.now = function() { return $0; };},  
+  3908556: function() {Module['emscripten_get_now_backup'] = performance.now;},  
  3908611: function($0) {performance.now = function() { return $0; };},  
- 3908659: function() {performance.now = Module['emscripten_get_now_backup'];},  
- 3908714: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 3908775: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 3908839: function() {return Module.webglContextAttributes.powerPreference;}
+ 3908659: function($0) {performance.now = function() { return $0; };},  
+ 3908707: function() {performance.now = Module['emscripten_get_now_backup'];},  
+ 3908762: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 3908823: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 3908887: function() {return Module.webglContextAttributes.powerPreference;}
 };
 
 
@@ -2138,6 +2138,18 @@ var ASM_CONSTS = {
         HEAPF64[totalJSptr >> 3] = NaN;
         HEAPF64[usedJSptr >> 3] = NaN;
       }
+    }
+
+  function _IsAndroidBrowser() {
+     return (/Android/i.test(navigator.userAgent));
+    }
+
+  function _IsIOSBrowser() {
+     return (/iPhone|iPad|iPod/i.test(navigator.userAgent));
+    }
+
+  function _IsMobileBrowser() {
+     return (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
     }
 
   var JS_Accelerometer = null;
@@ -4698,6 +4710,12 @@ var ASM_CONSTS = {
   
           requestOptions.timeout = timeout;
   	}
+
+  function _OpenNewTab(url)
+    {
+          url = Pointer_stringify(url);
+          window.open(url,'_blank');
+    }
 
   function ___assert_fail(condition, filename, line, func) {
       abort('Assertion failed: ' + UTF8ToString(condition) + ', at: ' + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
@@ -15823,6 +15841,9 @@ function checkIncomingModuleAPI() {
 }
 var asmLibraryArg = {
   "GetJSMemoryInfo": _GetJSMemoryInfo,
+  "IsAndroidBrowser": _IsAndroidBrowser,
+  "IsIOSBrowser": _IsIOSBrowser,
+  "IsMobileBrowser": _IsMobileBrowser,
   "JS_Accelerometer_IsRunning": _JS_Accelerometer_IsRunning,
   "JS_Accelerometer_Start": _JS_Accelerometer_Start,
   "JS_Accelerometer_Stop": _JS_Accelerometer_Stop,
@@ -15906,6 +15927,7 @@ var asmLibraryArg = {
   "JS_WebRequest_SetRedirectLimit": _JS_WebRequest_SetRedirectLimit,
   "JS_WebRequest_SetRequestHeader": _JS_WebRequest_SetRequestHeader,
   "JS_WebRequest_SetTimeout": _JS_WebRequest_SetTimeout,
+  "OpenNewTab": _OpenNewTab,
   "__assert_fail": ___assert_fail,
   "__cxa_allocate_exception": ___cxa_allocate_exception,
   "__cxa_begin_catch": ___cxa_begin_catch,
