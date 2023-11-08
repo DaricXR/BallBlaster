@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="apple-itunes-app" content="app-id=id6465991134, app-argument=https://apps.apple.com/us/app/connections-4-word-puzzle-game/id6465991134?mt=8">
     <title>Unity WebGL Player | Connections</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -18,7 +17,8 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer"> 
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Connections</div>
       </div>
@@ -59,9 +59,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/BallBlaster.loader.js";
       var config = {
-        dataUrl: buildUrl + "/BallBlaster.data",
-        frameworkUrl: buildUrl + "/BallBlaster.framework.js",
-        codeUrl: buildUrl + "/BallBlaster.wasm",
+        dataUrl: buildUrl + "/BallBlaster.data.unityweb",
+        frameworkUrl: buildUrl + "/BallBlaster.framework.js.unityweb",
+        codeUrl: buildUrl + "/BallBlaster.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "megarama",
         productName: "Connections",
